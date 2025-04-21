@@ -30,9 +30,10 @@ ul li {
 .image-section {
   height: 100vh;
   text-align: center;
-  background-color: #262626;
+  background-color: #3F7D58; /* New green background */
   padding: 20px;
 }
+
 
 .image-section img {
   max-width: 60%;
@@ -166,12 +167,12 @@ ul li {
     position: inherit;
   }
 
-  .image-section {
-  height: 100vh;
-  text-align: center;
-  background-color: #262626; /* Old dark background */
-  padding: 20px;
-}
+  .image-section img {
+    max-width: 80%;
+    max-height: 80%;
+    border-style: outset;
+    border-color: #6A9C89;
+  }
 
 
   .w3-container,
