@@ -75,17 +75,39 @@
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Game Menu</b></h3>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" 
+     style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  
+  <!-- Close button for small screens -->
+  <a href="javascript:void(0)" onclick="w3_close()" 
+     class="w3-button w3-hide-large w3-display-topleft" 
+     style="width:100%;font-size:22px">Close Menu</a>
+
+  <!-- Sidebar content -->
+  <div class="w3-container" style="text-align:center;">
+    <!-- Avatar Image -->
+    <img src="avatar.jpeg" class="w3-circle w3-border w3-border-white" 
+         style="width:150px;height:150px;margin-top:16px;border-width:3px;">
+    
+    <!-- Company Name or User Info -->
+    <h3 class="w3-padding-32"><b>Hailey<br>Sooknanan</b></h3>
+    <p class="w3-text-white">Game Developer</p>
   </div>
+
+  <!-- Navigation links -->
   <div class="w3-bar-block">
-    <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-    <a href="#pitch" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pitch</a>
-    <a href="#theme" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Theme</a>
-    <a href="#why" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My Why</a>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#pitch" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pitch</a> 
+    <a href="#theme" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Theme</a> 
+    <a href="#why" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My Why</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Character</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Theme</a> 
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">What</a> 
+    
   </div>
 </nav>
+
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
