@@ -28,10 +28,14 @@ ul li {
 
 /* Containers */
 .image-section {
-  height: 100vh;
-  text-align: center;
-  background-color: #3F7D58; /* New green background */
-  padding: 20px;
+    height: 100vh;
+    -moz-text-align: center; /*works on Firefox */
+    -webkit-text-align: center; /*works on Safari and Google Chrome*/
+    text-align: center;
+    background-color: #3F7D58;
+    -moz-padding: 20px; /*works on Firefox */
+    -webkit-padding: 20px; /*works on Safari and Google Chrome*/
+    padding: 20px;
 }
 
 
