@@ -1,114 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>G4C: Game & Character</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--Montserrat font-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  </head>
-  <body>   
-    <section>
-      <!-- MOBILE NAVIGATION -->
-      <div class="w3-container w3-padding-16 w3-border-bottom w3-hide-medium w3-hide-large">
-        <a href="#home" class="w3-bar-item w3-button w3-hover-none">My Game</a>
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleNavigation()">&#9776;</a>
-      </div>
-      <div id="mobile-nav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-sticky">
-        <a href="#pitch" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">PITCH</a>
-        <a href="#theme" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">THEME</a>
-        <a href="#why" class="w3-bar-item w3-button w3-center w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="toggleNavigation()">WHY</a>
-      </div>
+<head>
+  <title>Chef to Save the World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@200..700&display=swap">
+  <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
+  <style>
+    body, h1, h2, h3, h4, h5 {
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    .w3-half img {
+      margin-bottom: -6px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .w3-half img:hover {
+      opacity: 1;
+    }
+    /* Game Styles */
+    body * {
+      font-family: "Montserrat", sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Oswald", sans-serif;
+      font-weight: bold;
+    }
+    h1 {
+      color: #328E6E;
+    }
+    .home-section {
+      text-align: center;
+      margin-top: 80px;
+    }
+    .home-section p {
+      font-weight: bold;
+      color: #90C67C;
+      font-style: italic;
+      font-size: x-large;
+    }
+    .home-section h1 {
+      font-size: 64px;
+    }
+    .home-section h2 {
+      font-size: 32px;
+      color: #328E6E;
+    }
+    .home-section h3 {
+      font-size: 24px;
+    }
+    .game-container {
+      margin-left: 340px;
+      padding: 40px;
+    }
+    .w3-margin-top-2 {
+      margin-top: 32px;
+    }
+    .w3-margin-top-4 {
+      margin-top: 64px;
+    }
+    .w3-margin-top-20-percent {
+      margin-top: 20%;
+    }
+  </style>
+</head>
+<body>
 
-      <!-- SOCIAL SECTION -->
-      <section class="image-section w3-quarter w3-fixed w3-padding-small">
-        <!--IMAGE/AVATAR-->
-        <img src="avatar.jpeg" class="w3-circle w3-border w3-border-sand" style="border-width: 3px !important;"/>
-        <!--S0CIAL NETWORK BUTTONS-->
-        <div class="links w3-margin-top w3-padding-small">
-          <a class="icon-link w3-text-sand w3-hover-text-amber" href="#linkedin" target="_blank">
-             <i data-feather="linkedin"></i>
-          </a>
-        </div>
-        
-       
-      </section>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Game Menu</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#pitch" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pitch</a>
+    <a href="#theme" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Theme</a>
+    <a href="#why" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">My Why</a>
+  </div>
+</nav>
 
-      <!-- CONTENT SECTION-->
-      <section class="w3-threequarter w3-padding-large w3-right">
-        <!--DESKTOP NAVIGATION-->
-        <div class="w3-container w3-padding-large w3-border-bottom w3-hide-small">
-          <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green">GAME</a>
-          <a href="#why" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">WHY</a>
-          <a href="#theme" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">THEME</a>
-          <a href="#pitch" class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-green w3-hover-text-green w3-right w3-hide-small" style="border-width: 2px !important;" onclick="toggleNavigation()">PITCH</a>
-        </div>
-        <div class="content-container w3-margin-top-2">
-          <!--HOME SECTION-->
-          <div id="home" class="home w3-container w3-margin-top-4 w3-cursive">
-  <p>"No matter how hard or impossible it is, never lose sight of your goal."</p>
-  <h1>The Chef To Save The World</h1>
-  <h2>Hailey Sooknanan</h2>
-  <h3>Game Developer in the Making</h3>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Game Project</span>
+</header>
+
+<!-- Overlay effect -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" id="myOverlay"></div>
+
+<!-- Page Content -->
+<div class="w3-main game-container" id="home">
+  <div class="home-section">
+    <p>"No matter how hard or impossible it is, never lose sight of your goal."</p>
+    <h1>The Chef To Save The World</h1>
+    <h2>Hailey Sooknanan</h2>
+    <h3>Game Developer in the Making</h3>
+    <iframe width="392" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/K5-TrkBIaUnv1qK5AQBnh4q5q9HQIWhIGV7Oajs9OjR/embed?nosource"></iframe>
+  </div>
+
+  <div id="pitch" class="w3-container w3-margin-top-4 w3-large">
+    <h2 class="w3-border-bottom w3-border-red">Pitch</h2>
+    <p>
+      "In Chef to Save the World, you are a master chef on a quest to defeat hunger across three struggling kingdoms. Travel through vibrant lands, gather unique ingredients, and craft dishes that heal the starving nations..."
+    </p>
+  </div>
+
+  <div id="theme" class="w3-container w3-margin-top-4 w3-large">
+    <h2 class="w3-border-bottom w3-border-red">Theme - Outplay Hunger</h2>
+    <p>
+      This game touches on hunger in various countries. It shows the impact of hunger and how the user can combat this problem.
+    </p>
+  </div>
+
+  <div id="why" class="w3-container w3-margin-top-4 w3-large">
+    <h2 class="w3-border-bottom w3-border-red">My Why</h2>
+    <p>
+      I have seen many places with families and people starving due to war and other concerns. So this game is to open the eyes of many.
+    </p>
+  </div>
+
+  <div class="w3-container w3-center w3-padding-32">
+    <a class="icon-link w3-text-red" href="#linkedin" target="_blank">
+      <i data-feather="linkedin"></i>
+    </a>
+  </div>
 </div>
 
-<div>
+<script>
+  // Sidebar toggle functions
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
 
-           <iframe width="392" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/K5-TrkBIaUnv1qK5AQBnh4q5q9HQIWhIGV7Oajs9OjR/embed?nosource"></iframe>
-</div>
-          <!--pitch SECTION-->
-          <div id="pitch" class="w3-container w3-margin-top-20-percent w3-cursive w3-large">
-            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">PITCH</h2>
-            <p class="w3-margin-top-2"> 
-              "In Chef to Save the World, you are a master chef on a quest to defeat hunger across three struggling kingdoms. Travel through vibrant lands, gather unique ingredients, and craft dishes that heal the starving nations. Prepare for an epic culinary adventure with challenging cooking mechanics, daring food hunts, and fierce rivalries with dark forces who want to keep hunger reigning. With a unique blend of strategy, exploration, and creativity, every recipe you create brings hope and unity to a world on the brink of collapse."
-            </p>
-           
-            
-          </div>
-           <!--Theme SECTION-->
-          <div id="theme" class="w3-container w3-margin-top-20-percent w3-cursive w3-large">
-            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">THEME- Outplay Hunger</h2>
-            <p class="w3-margin-top-2"> 
-              This game touches on hunger that revovles around the world in various countries. It shows the impact of hunger and how the user is able to combat this problem.
-            </p>
-           
-            
-          </div>
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
 
-           <!--Why SECTION-->
-          <div id="why" class="w3-container w3-margin-top-20-percent w3-cursive w3-large">
-            <h2 class="w3-border-bottom w3-border-amber" style="border-width: 3px !important;">MY WHY</h2>
-            <p class="w3-margin-top-2"> 
-              I have seen many places with familes,people, starving due to war and other concerning factors. So this game is tp open the eyes of many.
-            </p>
-            
-            
-          </div>
-          </div>
-       
-    <script>
-      // Function to toggle mobile navigation
-      function toggleNavigation() {
-        let nav = document.getElementById("mobile-nav");
-        if (nav.classList.contains('w3-show')) {
-          nav.classList.remove('w3-show');
-        } else { 
-          nav.classList.add('w3-show');
-        }
-      }
-    </script>
-    <script>
-      // Script to load feather icons
-      feather.replace()
-    </script>
-  </body>
+  // Feather icons
+  feather.replace();
+</script>
+
+</body>
 </html>
